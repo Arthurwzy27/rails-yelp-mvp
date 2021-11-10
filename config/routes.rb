@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   resources :restaurants do
     resources :reviews, only: %i[new create]
   end
+  delete '/restaurants/:id', to: 'restaurants#destroy', as: :delete
 end
