@@ -1,10 +1,14 @@
 <h1>Restaurants List</h1>
 <%= link_to '+', new_restaurant_path %>
 <% @restaurants.each do |restaurant| %>
-  <ul>
-    <li>
-      <%= link_to restaurant.name, restaurant_path(restaurant) %>
-      <%= link_to 'x', delete_path(restaurant), method: :delete, data: { confirm: "Are you sure?" } %>
-    </li>
-  </ul>
+<ul>
+  <div class="cards">
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+      <li>
+        <%= link_to restaurant.name, restaurant_path(restaurant) %>
+        <%= link_to 'x', delete_path(restaurant), method: :delete, data: { confirm: "Are you sure?" } %>
+      </li>
+    </div>
+  </div>
+</ul>
 <% end %>
